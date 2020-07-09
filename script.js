@@ -1,6 +1,6 @@
 
-let still_playing = 1 ;                                             // Keeps track of round
-let player_score = 0;                                               // Stores player score
+let still_playing = 1 ;                                             
+let player_score = 0;                                              
 let computer_score = 0;   
 
 let rock_btn = document.getElementById("rock_btn");
@@ -28,7 +28,6 @@ playround(computer_selection, user_selection);
 function computerPlay(){
     // Generates a number between 1 and 3
     let selection = Math.floor(Math.random() * 3) + 1;
-
     // Assigns the numbers 1-3 to a selection
     if(selection == 1 ){
         return('rock');
@@ -39,50 +38,57 @@ function computerPlay(){
     }
 }
 
+
+
 function playround(c_Choice, u_choice){
+    let p_Selection = document.getElementById("p-selection");
+    let c_Selection = document.getElementById("c-selection");
+    p_Selection.innerHTML = u_choice;
+    c_Selection.innerHTML = c_Choice;
+    
+    let msg = document.getElementById("msg");
     // Compares selections to determine round winner
     if(c_Choice == u_choice){
         running_score();
-        alert("ITS A TIE!");
+        msg.innerHTML= "ITS A TIE!";
     } else if( u_choice == 'rock'){
-        if(c_Choice == "Paper"){
+        if(c_Choice == "paper"){
             ++computer_score;           
-            alert("Rock loses to Paper!"); 
+            msg.innerHTML = "Rock loses to Paper!"; 
         } else{
             ++player_score;            
-            alert("Rock beats Scissors! ");
+            msg.innerHTML = "Rock beats Scissors! ";
         }
         running_score();
         ++still_playing;
     } else if (u_choice == 'paper'){
         if(c_Choice == 'rock'){
             ++player_score;
-            alert("Paper beats Rock! ");
+            msg.innerHTML ="Paper beats Rock! ";
         }else{
             ++computer_score;
-            alert("Paper loses to Scissors!");
+            msg.innerHTML = "Paper loses to Scissors!";
         }
         running_score();
         ++still_playing;
     } else if(u_choice == 'scissors'){
         if (c_Choice == 'rock'){
             ++computer_score;
-            alert("Scissors loses to rock!");
+            msg.innerHTML = "Scissors loses to rock!";
         }else{
             ++player_score;
-            alert("Scissors beats Paper!");
+            msg.innerHTML ="Scissors beats Paper!";
         }
         running_score();
         ++still_playing;
-
     }else{
         //Filters anything that isn't rock paper or scissors
         alert("ERROR! Enter rock paper or scissors!");
     }    
 
 
-    // Ends game after 5th round, declares winner, and prompts user for another game
-    if(still_playing == 6){
+   // Ends game after 5th round, declares winner, and prompts user for another game
+/*    if(still_playing == 6){
         // Figures out who won and displays it through function
         declareWinner(computer_score, player_score);       
         //Prompts user for another game
@@ -95,7 +101,8 @@ function playround(c_Choice, u_choice){
         } else{
             console.log("GOOD GAME, GOOD BYE!")
         }
-    }
+
+    }*/
 }
 
 

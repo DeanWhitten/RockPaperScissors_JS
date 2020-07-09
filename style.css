@@ -1,0 +1,62 @@
+#gameContainer{
+    visibility: visable;
+    background-color: rgb(93, 184, 161);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#scoreBoard{
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+}
+
+#score{
+    display: flex;
+    flex-direction: row;
+}
+
+#selections{
+    display: flex;
+    flex-direction: row;
+}
+
+#Player_Score, #Computer_Score, #round{
+    font-size: 30px;
+}
+
+#p-selection, #c-selection, #vers {
+    text-align: center;
+    font-size: 50px;
+width: 400px;
+}
+
+#Round, #p-score, #c-score, #selections, #msg{
+    padding: 20px;
+    margin: 30px;
+   /* border: 1px solid black;*/
+    width: 400px;
+}
+
+#selections, #msg{
+    width: 925px;
+}
+
+button{
+    border: none;
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: rgb(211, 196, 60);
+    margin: 15px;
+}
+
+h4,h5{
+    font-size: 30px;
+}
+
+#msg{
+    font-size: 25px;
+}
