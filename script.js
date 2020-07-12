@@ -18,6 +18,16 @@ scissors_btn.addEventListener('click', () => {
     game('scissors');
 });
 
+let start = document.getElementById("start_button");
+start.addEventListener("click", () =>{
+    startGame();
+});
+
+function startGame(){
+    let startScreen = document.getElementById("start");
+    startScreen.style.visibility = "hidden";
+    
+}
 
 function game(user_selection){
 

@@ -1,5 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#start{
+    position: absolute;
+    visibility: visible;
+    height: 100vh;
+    width: 100vw;
+    background-color: blueviolet;
+    z-index: 10000;
+}
+
 #gameContainer{
+    position: absolute;
+    top: -0px;
     visibility: visable;
+    height: 100vh;
+    width: 100vw;
     background-color: rgb(93, 184, 161);
     text-align: center;
     display: flex;
@@ -11,6 +30,12 @@
     display: flex;
     flex-direction: column; 
     align-items: center;
+    margin-top: 100px;
+    padding-top: 40px;
+    height: 50vh;
+    background-color: rgba(84, 161, 142, 0.144);
+    border: 2px solid rgb(88, 190, 163);
+    border-radius: 5px;
 }
 
 #score{
