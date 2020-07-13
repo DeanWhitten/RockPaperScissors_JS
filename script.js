@@ -23,11 +23,24 @@ start.addEventListener("click", () =>{
     startGame();
 });
 
+
+
 function startGame(){
     let startScreen = document.getElementById("start");
     startScreen.style.visibility = "hidden";
-    
+
 }
+
+
+let newGame = document.getElementById("playAgain");
+newGame.addEventListener("click", () => {
+    let screen = document.getElementById("gameEnd");
+    screen.style.visibility = "hidden";
+    still_playing = 0;
+    computer_score = 0;
+    player_score = 0;
+    return( still_playing, computer_score, player_score);
+});
 
 function game(user_selection){
 
@@ -98,22 +111,22 @@ function playround(c_Choice, u_choice){
 
 
    // Ends game after 5th round, declares winner, and prompts user for another game
-/*    if(still_playing == 6){
-        // Figures out who won and displays it through function
-        declareWinner(computer_score, player_score);       
-        //Prompts user for another game
-        let playagain = prompt("Would you like to play again? ('y' or 'yes' for yes)");   
-        let restart = playagain.toLowerCase();       
-        // Checks user input
-        if(restart == "yes" || restart == "y"){
-            // Calls the main function, causing the game to restart
-            game();
-        } else{
-            console.log("GOOD GAME, GOOD BYE!")
-        }
+      if(still_playing == 6){
+          let gameOver = document.getElementById("gameEnd")
+          gameOver.style.visibility = "visible";
 
-    }*/
+          let winningMsg = document.getElementById("winnerMsg");
+          if (computer_score > player_score){
+              winningMsg.innerHTML = "Computer Wins!";
+          } else if (computer_score < player_score){
+              winningMsg.innerHTML = "Player Wins!";
+          } else{
+              winningMsg.innerHTML = "It's a tie!";
+          }
+
+      }
 }
+
 
 
 

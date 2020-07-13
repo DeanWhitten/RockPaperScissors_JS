@@ -85,3 +85,19 @@ h4,h5{
 #msg{
     font-size: 25px;
 }
+
+#gameEnd{
+    visibility: hidden;
+    background-color: blueviolet;
+    position: absolute;
+    width: 60%;
+    height: 70%;
+    top: 15%;
+    left: 20%;
+    border-radius: 5px;
+    box-shadow: 10px 10px 10px rgba(105, 101, 105, 0.664);
+}
+#textContainer{
+    padding: 20%;
+    text-align: center;
+}
